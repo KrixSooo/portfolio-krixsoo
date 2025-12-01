@@ -1,0 +1,109 @@
+.hero-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: nowrap;
+}
+
+.hero {
+  padding: 2rem;
+}
+.hero-inner h1 {
+  margin-top: 5rem;
+  margin-bottom: 1rem;
+  font-size: 4rem;
+}
+
+.hero-inner p {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.tagline {
+  font-size: 1.1rem !important;
+  color: var(--accent);
+  margin: 1rem 0 2rem 0 !important;
+  font-weight: 500;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--accent);
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  border: 2px solid var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--accent);
+  color: #041018;
+}
+
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.social-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--muted);
+  transition: color 0.3s ease;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.social-links a:hover .social-icon {
+  color: var(--accent);
+}
+
+.hero-visual {
+  width: 250px;
+  height: 250px;
+  flex: 0 0 250px;
+  border-radius: 50%;
+  border: 10px solid var(--accent);
+  margin-top: 4rem;
+  display: flex;
+  background-image: url('../../../public/favicon.ico');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-visual img {
+  border-radius: 50%;
+  border: 10px solid var(--accent);
+}
+
+@media (max-width: 700px) {
+  .hero-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hero-visual {
+    width: 250px;
+    height: 250px;
+    flex: 0 0 250px;
+  }
+}

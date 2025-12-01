@@ -1,0 +1,20 @@
+<article class="project-card" reveal>
+  @if (image) {
+  <div class="project-image">
+    <img [src]="image" [alt]="title" loading="lazy" />
+  </div>
+  }
+  <div class="project-content">
+    <div class="project-header">
+      <h3>{{ title }}</h3>
+    </div>
+    <p class="project-description">{{ description }}</p>
+    <div class="project-actions">
+      @if (link) {
+      <a [href]="link" target="_blank" rel="noopener noreferrer" class="btn">Voir le projet</a>
+      } @else {
+      <span class="btn btn--disabled">Bientôt disponible</span>
+      }
+    </div>
+  </div>
+</article>

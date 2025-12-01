@@ -1,0 +1,19 @@
+.privacy {
+  padding: 3rem 0;
+}
+.privacy h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.privacy h2 {
+  margin-top: 1.5rem;
+  color: var(--text);
+}
+.privacy p,
+.privacy li {
+  color: var(--muted);
+  line-height: 1.6;
+}
+.privacy ul {
+  margin-left: 1.2rem;
+}

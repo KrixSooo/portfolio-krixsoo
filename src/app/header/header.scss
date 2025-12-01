@@ -1,0 +1,107 @@
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+  height: var(--header-height);
+  opacity: 0.98;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(8px) saturate(1.05);
+  transition: background 240ms ease, box-shadow 240ms ease, transform 240ms ease;
+}
+
+.site-header.scrolled {
+  background: linear-gradient(135deg, rgba(15, 20, 23, 0.75), rgba(11, 15, 18, 0.6));
+  box-shadow: 0 8px 28px rgba(2, 6, 10, 0.6);
+  border-bottom-color: rgba(255, 255, 255, 0.05);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.brand-section {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+  background-image: url('../../../public/favicon.ico');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 6px 18px rgba(2, 6, 10, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.02);
+}
+
+.brand-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  padding: 0.35rem 0.5rem;
+  border-radius: 8px;
+}
+
+.brand-text:hover {
+  color: #ffff;
+  background: var(--glass);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.nav a {
+  position: relative;
+  color: var(--text);
+  margin-left: 0.75rem;
+  text-decoration: none;
+  padding: 0.45rem 0.6rem;
+  border-radius: 8px;
+  transition: transform 180ms ease, color 180ms ease, background 180ms ease;
+}
+
+.nav a:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* animated underline */
+.nav a::after {
+  content: '';
+  position: absolute;
+  left: 12%;
+  right: 12%;
+  bottom: -6px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 260ms cubic-bezier(0.2, 0.9, 0.2, 1);
+}
+
+.nav a:hover::after,
+.nav a.active::after {
+  transform: scaleX(1);
+}
+
+/* subtle active pill */
+.nav a.active {
+  color: #fff;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+}

@@ -1,0 +1,96 @@
+:root {
+  --splash-bg-dark: #000000;
+}
+
+.splash {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* deep black base with soft white nebula-like glows (no stars) */
+  background: radial-gradient(800px 300px at 20% 20%, rgba(255, 255, 255, 0.03), transparent),
+    radial-gradient(600px 260px at 85% 75%, rgba(255, 255, 255, 0.02), transparent),
+    linear-gradient(180deg, var(--splash-bg-dark) 0%, #020203 100%);
+  color: #fff;
+  z-index: 2000;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.splash-inner {
+  width: 100%;
+  max-width: 960px;
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.splash-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.splash-sub {
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+.loader-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+.loader-track {
+  width: 70%;
+  max-width: 760px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 999px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.6) inset;
+}
+
+.loader-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 48%;
+  border-radius: 999px;
+  /* white bar with slight glow for the spatial look */
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.9));
+  box-shadow: 0 6px 18px rgba(255, 255, 255, 0.06);
+  /* use transform for smoother, reversible animation */
+  transform: translateX(-120%);
+  animation: slide-transform 1.6s ease-in-out infinite alternate;
+}
+
+@keyframes slide-transform {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(220%);
+  }
+}
+
+/* ensure no scroll while splash visible (component is fixed full screen) */
+
+@media (max-width: 600px) {
+  .splash-title {
+    font-size: 2rem;
+  }
+  .loader-track {
+    width: 90%;
+  }
+  .loader-bar {
+    width: 56%;
+  }
+}
